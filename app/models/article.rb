@@ -423,6 +423,7 @@ class Article < Content
       c.article_id = self.id
       c.save!
     end
+    @article2.destroy
     self.save!
   end
 
