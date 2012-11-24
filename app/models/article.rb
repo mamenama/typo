@@ -420,11 +420,10 @@ class Article < Content
     @article2 = Article.find_by_id(other_article_id)
     self.body = self.body + " " + @article2.body
     @article2.comments.each do |c|
-      c.article_id = self.id
-      c.save!
+      self.add_comment(c.attributes)
     end
-    @article2.destroy
     self.save!
+    @article2.destroy
   end
 
   protected
