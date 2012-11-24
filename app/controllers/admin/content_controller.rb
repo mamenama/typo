@@ -242,5 +242,6 @@ class Admin::ContentController < Admin::BaseController
   end
   
   def merge_article
+    
   end
 end
